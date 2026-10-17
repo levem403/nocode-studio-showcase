@@ -7,6 +7,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/codemirror.min.css" />
 </head>
 <body>
+  <!-- Aviso Mobile (Aparece apenas em celulares) -->
+  <div id="mobile-overlay" class="mobile-overlay">
+    <div class="mobile-modal">
+      <h3>Experiência Desktop</h3>
+      <p>Este é um ambiente de desenvolvimento visual avançado. A interface e o motor de <strong>Drag & Drop</strong> foram projetados para uso em computadores.</p>
+      <p>Para explorar a arquitetura e testar as funcionalidades reais, recomendamos abrir este link pelo seu PC.</p>
+      <button onclick="document.getElementById('mobile-overlay').style.display='none'">Visualizar mesmo assim</button>
+    </div>
+  </div>
   <!-- Barra de Ferramentas Global -->
   <div class="toolbar">
     <button id="btn-novo"><i data-lucide="file-plus"></i><span class="button-text">Novo</span></button>
