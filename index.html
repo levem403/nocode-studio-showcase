@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>NoCode Studio Showcase</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/codemirror.min.css" />
+</head>
+<body>
+  <!-- Barra de Ferramentas Global -->
+  <div class="toolbar">
+    <button id="btn-novo"><i data-lucide="file-plus"></i><span class="button-text">Novo</span></button>
+    <button id="btn-salvar"><i data-lucide="save"></i><span class="button-text">Salvar</span></button>
+    <button id="btn-abrir"><i data-lucide="folder-open"></i><span class="button-text">Abrir</span></button> 
+    <button id="btn-executar"><i data-lucide="play"></i><span class="button-text">Executar Tudo</span></button>
+    <button id="btn-executar-selecao"><i data-lucide="play"></i><span class="button-text">Executar Seleção</span></button>
+    <button id="btn-executar-passo"><i data-lucide="bug"></i><span class="button-text">Debug</span></button>
+    <button id="btn-reordenar-abas" title="Ordenar Abas"><i data-lucide="list-ordered"></i><span class="button-text">Ordenar Abas</span></button>
+    <button id="btn-tutorial" class="btn-toolbar" title="Iniciar Tutorial Guiado">
+      <i data-lucide="help-circle"></i> Tutorial
+    </button>
+  </div>
+
+  <div class="container">
+    <!-- Catálogo de Componentes (Sidebar) -->
+    <aside class="sidebar">
+      <h3>Blocos</h3>
+
+      <div class="block-category">
+        <div class="category-header" data-toggle>Controle de Fluxo</div>
+        <ul class="category-list visible">
+          <li data-type="If"><i data-lucide="git-branch"></i> If</li>
+          <li data-type="IfImageMatch"><i data-lucide="image"></i> If Imagem</li>
+          <li data-type="IfOCR"><i data-lucide="scan"></i> If OCR</li>
+          <li data-type="Elif"><i data-lucide="git-branch-plus"></i> Elif</li>
+          <li data-type="Else"><i data-lucide="git-branch"></i> Else</li>
+          <li data-type="While"><i data-lucide="refresh-ccw"></i> While</li>
+          <li data-type="Repeat"><i data-lucide="repeat"></i> Repeat</li>
+          <li data-type="Break"><i data-lucide="ban"></i> Break</li>
+          <li data-type="Try"><i data-lucide="alert-circle"></i> Try</li>
+          <li data-type="Catch"><i data-lucide="shield-alert"></i> Catch</li>
+          <li data-type="Funcao"><i data-lucide="function-square"></i> Função</li>
+          <li data-type="ChamarFuncao"><i data-lucide="play-circle"></i> Chamar Função</li>
+          <li data-type="Return"><i data-lucide="undo"></i> Return</li>
+          <li data-type="Label"><i data-lucide="tag"></i> Label</li>
+          <li data-type="GoTo"><i data-lucide="corner-up-left"></i> GoTo</li>
+          <li data-type="End"><i data-lucide="chevron-right-square"></i> ]</li>
+        </ul>
+      </div>
+
+      <div class="block-category">
+        <div class="category-header" data-toggle>Comandos de Automação</div>
+        <ul class="category-list">
+          <li data-type="Mouse"><i data-lucide="mouse-pointer"></i> Mouse</li>
+          <li data-type="Tecla"><i data-lucide="keyboard"></i> Teclado</li>
+          <li data-type="OCR"><i data-lucide="scan"></i> Ler Texto (OCR)</li>
+          <li data-type="ImageMatch"><i data-lucide="image"></i> Image Match</li>
+          <li data-type="Window"><i data-lucide="app-window"></i> Janela</li>
+          <li data-type="System"><i data-lucide="terminal"></i> Sistema</li>
+          <li data-type="Variable"><i data-lucide="database"></i> Variável</li>
+          <li data-type="Clipboard"><i data-lucide="clipboard"></i> Área de Transferência</li>
+        </ul>
+      </div>
+
+      <div class="block-category">
+        <div class="category-header" data-toggle>SQLite</div>
+        <ul class="category-list">
+          <li data-type="SQLSelect"><i data-lucide="search"></i> Consultar Dados</li>
+          <li data-type="SQLInsert"><i data-lucide="log-in"></i> Inserir Dados</li>
+          <li data-type="SQLUpdate"><i data-lucide="edit-3"></i> Atualizar Dados</li>
+          <li data-type="SQLDelete"><i data-lucide="trash-2"></i> Deletar Dados</li>
+          <li data-type="SQLDDL"><i data-lucide="database"></i> Estrutura (DDL)</li>            
+        </ul>
+      </div>
+
+      <div class="block-category">
+        <div class="category-header" data-toggle>Avançado</div>
+        <ul class="category-list">
+          <li data-type="RequisicaoHTTP"><i data-lucide="globe"></i> Requisição HTTP</li>
+          <li data-type="ManipularJSON"><i data-lucide="braces"></i> Manipular JSON</li>
+          <li data-type="LerEscreverArquivo"><i data-lucide="file-text"></i> Ler / Escrever Arquivo</li>
+          <li data-type="ExecutarComando"><i data-lucide="terminal-square"></i> Executar Comando</li>
+          <li data-type="SQL"><i data-lucide="code-2"></i> Código SQL</li>
+          <li data-type="Python"><i data-lucide="code-2"></i> Código Python</li>
+        </ul>
+      </div>
+
+      <div class="block-category">
+        <div class="category-header" data-toggle>Utilitários</div>
+        <ul class="category-list">
+          <li data-type="Log"><i data-lucide="list"></i> Log</li>
+          <li data-type="Comment"><i data-lucide="message-circle"></i> Comentário</li>
+          <li data-type="Timer"><i data-lucide="timer"></i> Timer</li>
+          <li data-type="Delay"><i data-lucide="clock"></i> Delay</li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Área de Trabalho Principal -->
+    <div class="main-content">
+      <div class="workspace-tabs" id="workspace-tabs">
+        <button id="add-workspace-btn" title="Adicionar nova aba">+</button>
+      </div>
+      <section class="workspace" id="workspace">
+        <div class="workspace-inner"></div>
+        <div class="scrollbar-track">
+          <div class="scrollbar-thumb"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Divisor Redimensionável -->
+    <div id="resizer"></div>
+
+    <!-- Inspetor de Propriedades -->
+    <aside class="auxiliary">
+      <p class="auxiliary-placeholder">Inspetor de Propriedades</p>
+    </aside>
+  </div>
+  
+  <!-- Sistema de Modais -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div id="modal-container" class="modal-container">
+      <div id="modal-header" class="modal-header">
+        <h3 id="modal-title"></h3>
+        <span id="modal-close-btn" class="modal-close-btn">&times;</span>
+      </div>
+      <div id="modal-body" class="modal-body">
+        <p id="modal-message"></p>
+      </div>
+      <div id="modal-footer" class="modal-footer"></div>
+    </div>
+  </div>
+
+  <!-- Tooltip do Tutorial Interativo -->
+  <div id="tutorial-tooltip" class="hidden">
+    <h4 id="tutorial-title"></h4>
+    <p id="tutorial-text"></p>
+    <div id="tutorial-footer"></div>
+  </div>
+
+  <!-- Dependências Externas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/python/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.14/mode/sql/sql.min.js"></script>
+  <script type="module" src="renderer.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Inicialização de Componentes UI -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      lucide.createIcons();
+    });
+
+    document.querySelectorAll('[data-toggle]').forEach(header => {
+      header.addEventListener('click', () => {
+        header.classList.toggle('open');
+        header.nextElementSibling.classList.toggle('visible');
+      });
+    });
+
+    document.querySelectorAll('.category-list li').forEach(item => {
+      item.addEventListener('click', () => {
+        const type = item.dataset.type;
+        if (typeof addBlock === 'function') addBlock(type);
+      });
+    });
+  </script>
+</body>
+</html>
