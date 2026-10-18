@@ -54,7 +54,7 @@ O maestro da aplicação responsável por unir o visual aos dados. Suas principa
 
 O NoCode Editor possui um arsenal de ferramentas projetadas para cobrir desde fluxos simples até automações de engenharia de dados.
 
-### ⚙️ 3.1. Controle de Fluxo
+### 3.1. Controle de Fluxo
 Controlam o rumo que o script vai tomar com base em inteligência lógica.
 
 * **If (Se Lógico):** O bloco decisório mestre. Pode avaliar variáveis (usando matemática `>`, `<`, `=`), verificar se uma janela ou arquivo específico existe no computador, ler a área de transferência, monitorar se uma tecla física está sendo pressionada, checar processos do Windows, ler a hora atual do sistema ou inspecionar a cor de um pixel específico (Hex).
@@ -68,7 +68,7 @@ Controlam o rumo que o script vai tomar com base em inteligência lógica.
 * **Função / Chamar Função / Return:** Modularização extrema. Permite "empacotar" uma rotina gigante dentro de um bloco `Função`, e depois executá-la em várias partes do script usando `Chamar Função`. O `Return` devolve os cálculos para o fluxo principal.
 * **Label / GoTo:** Sistema de navegação por âncoras. O `Label` marca um ponto na lógica, e o `GoTo` força o algoritmo a voltar no tempo ou pular diretamente para aquele ponto.
 
-### 🖱️ 3.2. Comandos de Automação
+### 3.2. Comandos de Automação
 Atuam diretamente no ecossistema do Sistema Operacional, emulando um ser humano.
 
 * **Mouse:** Move o cursor em coordenadas absolutas ou relativas. Simula cliques esquerdos, direitos, ou pressionamento de botões. Possui controle de rolagem (Scroll).
@@ -78,9 +78,9 @@ Atuam diretamente no ecossistema do Sistema Operacional, emulando um ser humano.
 * **Janela:** Gestor de janelas do SO. Seleciona janelas ativas e pode Forçar Foco, Minimizar, Maximizar, Fechar ou reposicioná-las para metragens exatas na tela. Também serve como "Abridor" de arquivos/pastas.
 * **Sistema:** Comandos agressivos de OS: Desligar o computador, Reiniciar, Bloquear Sessão, Logoff ou Hibernar, com temporizadores de carência.
 * **Variável:** Matriz de dados. Permite criar múltiplas variáveis ao mesmo tempo através de uma interface de *Grid*. Variáveis são globais e podem armazenar textos, números ou retornos de funções.
-* **Área de Transferência (Clipboard):** Manipula o Ctr+C do sistema. Limpa a área, insere textos forçados, joga valores de variáveis no clipboard ou captura o que está copiado e salva no robô.
+* **Área de Transferência (Clipboard):** Manipula o Ctrl+C do sistema. Limpa a área, insere textos forçados, joga valores de variáveis no clipboard ou captura o que está copiado e salva no robô.
 
-### 🗄️ 3.3. Engenharia de Banco de Dados (SQLite)
+### 3.3. Engenharia de Banco de Dados (SQLite)
 Uma interface visual de DBA (Database Administrator) completa acoplada ao sistema, sem exigir que o usuário saiba linguagem SQL pura.
 
 * **SQL Estrutura (DDL):** Construtor de tabelas. Cria novas estruturas de dados, deleta tabelas ou altera a estrutura em tempo real adicionando novas colunas via formulário limpo.
@@ -89,7 +89,7 @@ Uma interface visual de DBA (Database Administrator) completa acoplada ao sistem
 * **Deletar Dados (SQL Delete):** Construtor visual de cláusulas `WHERE` para deletar registros específicos com segurança.
 * **Consultar Dados (SQL Select):** O extrator. Busca dados filtrados e permite definir o retorno: ou puxa apenas a primeira linha para uma variável, ou puxa o lote inteiro em formato JSON estruturado (ideal para rodar um `While` ou envio para API).
 
-### 🚀 3.4. Avançado (Integrações e Scripting)
+### 3.4. Avançado (Integrações e Scripting)
 Para quando as automações visuais não são suficientes e o fluxo exige conexões externas.
 
 * **Requisição HTTP (API):** Construtor completo de conexões com a Web. Suporta métodos `GET`, `POST`, `PUT`, `DELETE`, `PATCH`. Permite injetar Cabeçalhos (Headers) personalizados, Parâmetros de Query String e o Corpo (Payload) com Syntax Highlighting. Salva a resposta da API e o Código de Status HTTP em variáveis independentes.
@@ -99,7 +99,7 @@ Para quando as automações visuais não são suficientes e o fluxo exige conex�
 * **Código SQL:** Um bloco de editor profundo para *Queries* de altíssima complexidade (ex: `INNER JOINS` recursivos) que as telas visuais do CRUD não cobririam.
 * **Código Python:** A "Bala de Prata" do sistema. Abre um IDE com validação de escopo onde desenvolvedores podem escrever lógica Python pura. O script inserido herda o contexto do robô.
 
-### 🛠️ 3.5. Monitoramento e Utilitários
+### 3.5. Monitoramento e Utilitários
 Blocos vitais para auditoria e sincronismo da automação.
 
 * **Delay:** O regente do tempo. Permite agendar uma pausa "Fixa" (ex: esperar 2 segundos), "Aleatória" (ex: esperar entre 1 e 4 segundos, muito usado em bots para evitar padronização), "Por Variável" ou "Esperar até um horário limite" (Ex: pausar o robô até as 08:00 AM).

@@ -2730,7 +2730,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const jaFez = localStorage.getItem('tutorialCompleted');
     if (!jaFez) {
       const want = await showConfirm(
-        "Bem-vindo à versão Web Demo do NoCode Editor!<br><br>Deseja fazer um rápido tutorial interativo para aprender os comandos essenciais da plataforma?", 
+        "Bem-vindo à versão Web Demo do NoCode Studio!<br><br>Deseja fazer um rápido tutorial interativo para aprender os comandos essenciais da plataforma?", 
         { title: "Bem-vindo! 👋", ok: "Iniciar Tutorial", cancel: "Pular" }
       );
       if (want) {
@@ -2862,7 +2862,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 clearHighlight();
 
                 await showAlert(
-                  "Esta é a barra lateral direita (Inspetor de Propriedades)!<br><br>É aqui que você preenche textos, escolhe opções e configura o comportamento de cada comando.",
+                  "Esta é a barra lateral direita (Inspetor de Propriedades)!<br><br>É aqui que você preenche textos, escolhe opções e configura o comportamento de cada bloco.",
                   "Passo 4/10: Inspetor de Propriedades"
                 );
                 
@@ -2915,8 +2915,8 @@ document.addEventListener("DOMContentLoaded", () => {
                           clearHighlight();
 
                           await showAlert(
-                            "Agora vamos testar a organização do seu código!<br><br>Clique, segure e <b>arraste o bloco Log</b> soltando-o <b>para dentro do bloco If</b> (entre o If e o End).",
-                            "Passo 8/10: Arrastar e Soltar"
+                            "Atalho de edição: o <b>duplo clique</b> abre o painel de propriedades do bloco selecionado.<br><br>Execute um duplo clique no bloco <b>Log</b> para abrir seu menu de configurações.",
+                            "Passo 3/10: Inspetor de Propriedades"
                           );
 
                           checkInterval = setInterval(async () => {
@@ -2955,7 +2955,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                         clearHighlight();
                                         
                                         await showAlert(
-                                          "Meus Parabéns! Você apagou os blocos com sucesso.<br><br>Você concluiu o tutorial e já domina todas as mecânicas principais do NoCode Editor. Divirta-se criando suas automações!",
+                                          "Meus Parabéns! Você apagou os blocos com sucesso.<br><br>Você concluiu o tutorial e já domina todas as mecânicas principais do NoCode Studio. Divirta-se criando suas automações!",
                                           "Tutorial Concluído! 🎉"
                                         );
                                         localStorage.setItem('tutorialCompleted', 'true');
